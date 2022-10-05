@@ -13,22 +13,12 @@ bool win = false, lose = false, showMap = false;
 
 void printMap(){
     for(int i = 0; i < X*X; i++){
-        if(cX == i % X && cY == int(i/X)){
-            cout << "X ";
-        }
-        else if(abs(mapa[int(i/X)][i % X]) == 1){
-            cout << "# ";
-        }
-        else if(mapa[int(i/X)][i % X] == 2){
-            cout << "$ ";
-        }
-        else{
-            cout << ". ";
-        }
+        if(cX == i % X && cY == int(i/X)) cout << "X ";
+        else if(abs(mapa[int(i/X)][i % X]) == 1) cout << "# ";
+        else if(mapa[int(i/X)][i % X] == 2) cout << "$ ";
+        else cout << ". ";
 
-        if(i % X == X - 1){
-            cout << '\n';
-        }
+        if(i % X == X - 1) cout << '\n';
     }
 }
 
@@ -64,6 +54,8 @@ void game(){
             system("cls");
             cout << "Esa direccion no existe, intentalo de nuevo.\n";
             game();
+            return;
+            break;
     }
     system("cls");
     if(tempX >= X || tempY >= X || tempX < 0 || tempY < 0 || mapa[tempY][tempX] == 0){
