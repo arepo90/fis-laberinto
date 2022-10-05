@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #define X 5
 using namespace std;
 
